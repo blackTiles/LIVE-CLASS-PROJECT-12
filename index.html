@@ -14,6 +14,7 @@
             <nav class="navbar">
                 <div class="nav-logo"><img src="./images/white-logo.png" alt=""></div>
                 <ul class="list-items">
+                    <li class="close-btn" onclick="closeNav()" style="font-size: 35px;">&times;</li>
                     <li class="list-item">Home</li>
                     <li class="list-item">About Us</li>
                     <li class="list-item">Pages</li>
@@ -22,6 +23,9 @@
                     <li class="list-item">Subscribe</li>
                     <li class="list-item list-item-talk">Let's Talk</li>
                 </ul>
+                <div class="hamburger">
+                    <span onclick="openNav()" style="font-size: 35px;">&#9776;</span>
+                </div>
             </nav>  
             <div class="hero">
                 <div class="hero-left"><img src="./images/hero-page.jpg" alt=""></div>
@@ -167,5 +171,14 @@
             </div>
         </footer>
     </div>
+    <script>
+        function openNav() {
+          document.querySelector(".list-items").style.width = "250px";
+        }
+        
+        function closeNav() {
+          document.querySelector(".list-items").style.width = "0";
+        }
+    </script>
 </body>
 </html>

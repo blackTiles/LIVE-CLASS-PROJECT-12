@@ -44,15 +44,17 @@ button{
 .list-items{
     display: flex;
     list-style: none;
-    justify-content: space-between;
-    align-items: center;
     color: var(--color2);
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    flex-grow: 1;
+    gap: 40px;
 }
 .list-items .list-item{
     font-size: 18px;
     font-family: sans-serif;
     font-weight: 100;
-    margin-left: 50px;
     cursor: pointer;
 }
 .list-items .list-item-talk{
@@ -61,6 +63,20 @@ button{
     color: var(--color1);
     padding: 12px 45px;
 }
+/* nav mobile  */
+.hamburger{
+    color: var(--color1);
+    display: none;
+}
+.hamburger span{
+    cursor:pointer;
+    font-size: 35px;
+}
+.close-btn{
+    display: none;
+    cursor:pointer;
+}
+
 
 .hero{
     display: flex;
@@ -252,6 +268,7 @@ footer{
 }
 .footer-nav{
     display: flex;
+    flex-wrap: wrap;
     width: 70%;
     margin: 0px auto;
     justify-content: space-between;
@@ -262,9 +279,10 @@ footer{
 .footer-nav .social-links{
     display: flex;
     align-items: center;
+    gap: 20px;
 }
 .social-links .social-link{
-    margin-left: 30px;
+    
     width: 50px;
     height: 50px;
     background: rgba(190, 184, 184, 0.493);
@@ -281,6 +299,7 @@ footer{
     justify-content: space-between;
     width: 70%;
     margin: 0px auto;
+    gap: 15px;
     padding: 50px 0px 100px 0px;
 }
 .footer-bottom ul{
@@ -296,4 +315,230 @@ footer{
 .footer-bottom ul li:first-child{
     font-size: 15px;
     color: var(--color1);
+}
+@media (max-width:1400px){
+    .list-items .list-item-talk{
+        margin-left: 0px;
+    }
+    .navbar .list-items{
+        gap: 20px;
+    }
+} 
+@media (max-width:1100px) {
+    .navbar,.hero,.page2,.page3,.page4,.footer-bottom{
+        width: 90%;
+    }
+    .hamburger{
+        display: inline-block;
+    }
+    .navbar .list-items{
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.87);
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 70px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 40px;
+    }
+    .close-btn{
+        display: inline-block;
+        position: absolute;
+        right: 25px;
+        top: 60px;
+        /* font-size: 35px; */
+    }
+    .list-items .list-item-talk{
+        margin-left: 0px;
+    }
+
+    .hero{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .hero-left{
+        width: 100%;
+    }
+    .hero-left img{
+        width: 100%;
+        height: 30vw;
+        object-fit: cover;
+    }
+    .hero-right{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .hero-right h1{
+        margin-top: 30px;
+        font-family: var(--font1);
+        font-size:40px;
+        line-height:40px;
+        text-align: center;
+    }
+    .hero-right p{
+        color: var(--color2);
+        margin: 40px 0px;
+        text-align: center;
+    }
+    .hero-right form{
+        box-sizing: content-box;
+        width: fit-content;
+        background: var(--color1);
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .hero-right form i{
+        color: var(--color3);
+        font-size:20px;
+        padding:0px 10px;
+    }
+    .hero-right form input{
+        margin: 0px 10px;
+        height: 45px;
+        width: 250px;
+        font-family: sans-serif;
+        outline: none;
+        border: none;
+    }
+    .page2 h1,.page3 h1{
+        text-align: center;
+        font-size:40px;
+        line-height:40px;
+    }
+    .project-data .data-num{
+        font-size: 20px;
+        font-weight: 800;
+    }
+    .project-data .data-role{
+        font-size: 12px;
+        font-family: sans-serif;
+        /* font-weight: 100; */
+    }
+    
+}
+@media (max-width:830px){
+    .footer-nav{
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+    }
+}
+@media (max-width: 768px) {
+    .page3-content{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        /* grid-auto-rows: repeat(3,30vw); */
+        gap: 50px;
+        margin: 50px auto;
+    }
+    .cont-inner{
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: 0px auto;
+        text-align: center;
+    }
+    .cont-inner button{
+        margin: 0px auto;
+    }
+    .cont-inner img{
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+    .cont-inner:nth-child(1){
+        grid-row: 2/3;
+    }
+    .cont-inner:nth-child(2){
+        grid-row: 1/2;
+    }
+    .cont-inner:nth-child(3){
+        height: auto;
+        grid-row: 3/4;
+    }
+    .cont-inner:nth-child(3) img{
+        height: auto;
+    }
+    .cont-inner:nth-child(4){
+        height: auto;
+        grid-row:6/7;
+    }
+    .cont-inner h2{
+        font-size: 30px;
+        line-height: 30px;
+    }
+    .cont-inner p{
+        color: rgb(150, 139, 139);
+        font-family: sans-serif;
+        margin: 30px 0px;
+        line-height: 20px;
+    }
+    .pg4-top{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+    }
+    .pg4-top h2{
+        font-size: 40px;
+        line-height: 40px;
+        margin-bottom:20px;
+    }
+    .pg4-top p{
+        color: rgb(150, 139, 139);
+        font-family: sans-serif;
+        line-height: 20px;
+    }
+    .pg4-middle{
+        margin: 50px 0px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+    .profile-card h4{
+        margin: 5px 0px;
+        font-size: 35px;
+    }
+    .profile-card p{
+        color: rgb(150, 139, 139);
+        font-family: sans-serif;
+        line-height: 20px;
+        font-size: 16px;
+    }
+    .pg4-middle .card-image img{
+        width: 100%;
+        height: 500px;
+    }
+}
+
+@media (max-width: 480px){
+    .hero-right form input{
+        margin: 0px 10px;
+        height: 45px;
+        width: 90%;
+        font-family: sans-serif;
+        outline: none;
+        border: none;
+    }
+    .footer-bottom{
+        display: flex;
+        justify-content: center;
+    }
 }
