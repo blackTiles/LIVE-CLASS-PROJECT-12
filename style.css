@@ -437,6 +437,9 @@ footer{
     }
 }
 @media (max-width: 768px) {
+    .navbar{
+        margin: 15px auto;
+    }
     .page3-content{
         display: grid;
         grid-template-columns: repeat(1,1fr);
